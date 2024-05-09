@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outer Clove Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="userrasavation.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      function submitForm(event) {
+          event.preventDefault(); // Prevents the default form submission behavior
+
+          // Your existing code for changing color
+          var dateInput = document.getElementById('reservation_date');
+          var destinationSelect = document.getElementById('destination');
+
+          if (dateInput.value !== '' && destinationSelect.value !== '') {
+              document.body.style.backgroundColor = '#f3f3f3';
+          }
+
+          // Your AJAX code to submit the form data without redirecting
+          var form = document.getElementById('reservationForm');
+          var formData = new FormData(form);
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', form.action, true);
+          xhr.onload = function () {
+              if (xhr.status === 200) {
+                  // Clear the form
+                  form.reset();
+                  // Display an alert box
+                  alert('Reservation successful!');
+              } else {
+                  alert('Error submitting reservation. Please try again.');
+              }
+          };
+          xhr.send(formData);
+      }
+  </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="image/image_9.png"></a>
+        <nav class="navbar">
+          <a href="userhome.html">HOME</a>
+          <a href="menu.html">MENU</a>
+          <a href="order.html">ORDER</a>
+          <a href="userrasavation.html" class="active">RESERVATION</a>
+          <a href="contact.html">CONTACT</a>
+          
+        </nav>
+        <div class="icon">
+          <a href="login.html">
+          <i class="fa fa-user"></i>
+        </a>
+        <i class="fas fa-bars" id="menu"></i>
+        </div>
+      </header>
+
+      <div class="reservation-form">
+        <center><h2>Reservation Form</h2></center>
+        <form id="reservationForm" action="process_reservation.php" method="post">
+            <input type="text" name="customer_name" placeholder="Your Name" required>
+            <input type="text" name="address" placeholder="Your Address" required>
+            <input type="tel" name="contact_number" placeholder="Contact Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="date" name="reservation_date" id="reservation_date" required>
+            <input type="time" name="reservation_time" required>
+            <input type="number" name="num_attendees" placeholder="Number of Persons" required>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            let menu = document.querySelector('#menu');
+            let navbar = document.querySelector('.navbar');
+        
+            menu.onclick = () => {
+                menu.classList.toggle('fa-times');
+                navbar.classList.toggle('active');
+            }
+
+            let reservationForm = document.getElementById('reservationForm');
+
+            reservationForm.onsubmit = function(event) {
+                event.preventDefault();
+
+                
+                let formData = new FormData(reservationForm);
+
+                
+                fetch('process_reservation.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    
+                    if (data.success) {
+                        alert('Reservation successfully added!');
+                        reservationForm.reset(); // Reset the form
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while processing the reservation.');
+                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        let menu = document.querySelector('#menu');
+        let navbar = document.querySelector('.navbar');
+    
+        menu.onclick = () =>{
+          menu.classList.toggle('fa-times');
+          navbar.classList.toggle('active');
+        }
+      </script>
+
+      
+<footer>
+  <div class="social-icons">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/YourFacebookPage" target="_blank" class="icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/YourLinkedInProfile" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/YourInstagramProfile" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/i/flow/login" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" class="icon"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <div class="content-wrapper">
+      <div class="address">
+          <h3>Contact</h3>
+          <div class="address-links">
+              <ul>
+                  <li class="address1"><i class="fa-solid fa-location-dot"></i> Kandy Rd,
+                      Colombo, Sri Lanka.</li>
+                  <li><a href="tel:+94 112543798"><i class="fa-solid fa-phone"></i>+94 112543798</a></li>
+                  <li><a href="mailto:info@theouterclove.com"><i class="fa-solid fa-envelope"></i>info@theouterclove.com</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<section id="copy-right">
+  <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+    2024 Outer Clove. All Rights Reserved. 
+  </div>
+</section>
+</body>
+</html>

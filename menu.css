@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --black: #333;
+    --light-color: #cdaa7c;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 63%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    z-index: 10000;
+}
+
+header .logo img {
+    height: auto;
+    max-height: 7rem; 
+}
+
+header .navbar a {
+    font-size: 1.7rem;
+    padding: .5rem 1.5rem;
+    color: var(--light-color);
+    border: .1rem solid transparent;
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+    color: #fff;
+    border: .1rem solid rgba(205, 170, 124, 0.2);
+}
+
+header .icon i {
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    background: var(--light-color);
+    text-align: center;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+header .icon i:hover {
+    color: #fff;
+    background: var(--light-color);
+    transform: rotate(360deg);
+}
+
+header .icon #menu {
+    display: none;
+}
+
+.menu-section {
+    position: relative;
+    padding-top: 110px;
+    background-color: burlywood;
+    color: #ffffff;
+    min-height: calc(200vh - 35vh - 15px); 
+}
+
+.menu-section h2 {
+    color: rgb(234, 58, 9);
+    font-size: 6rem;
+    line-height: 1;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+.menu-section h2:hover {
+    transform: scale(1.05);
+}
+
+.menu-section h3,
+h4 {
+    color: #000000;
+    font-size: 1.8em;
+    line-height: 3.5;
+    border: #cdaa7c;
+}
+
+.menu-section p {
+    color: #000000;
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+.menu-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 100px;
+    justify-content: space-around;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.menu-item {
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover img {
+    transform: scale(1.1);
+}
+
+.menu-item-caption {
+    padding: 15px;
+}
+
+.menu-item-caption p {
+    margin: 0;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu-category {
+    margin-bottom: 60px;
+}
+
+.menu-category h4 {
+    color: #000000;
+    font-size: 2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    height: 25vh;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.social-icons {
+    position: absolute;
+    top: 17px;
+    left: 100px;
+}
+
+.icons-wrapper {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #efa340;
+}
+
+
+.social-icons h3{
+    padding-bottom: 10px;
+	font-size: 20px;
+    font-weight: 600;
+}
+
+
+.content-wrapper {
+    position: absolute;
+    bottom: 1px;
+    right: 120px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 200px;
+}
+
+.address h3 {
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+.address-links {
+    list-style: none;    
+    text-align: left; 
+}
+
+.address-links li {
+    list-style: none;
+}
+
+.address-links li a {
+    color: #ebe0e0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.address-links li i {
+    font-size: 16px;
+    padding-right: 8px;
+    color: #fcfafb;
+}
+
+.address-links li.address1 {
+    font-size: 16px;
+}
+
+.address-links li i:nth-child(1) {
+    padding-top: 15px;
+}
+
+.copy-right-sec {
+    padding: 1.8rem;
+    background: #82074a;
+    color: #fff;
+    text-align: center;
+}
+
+.copy-right-sec a {
+    color: #fcd462;
+    font-weight: 500;
+}
+
+.copy-right-sec{
+	padding: 1.8rem;
+    background: #82074a;
+    color: #fff;
+    text-align: center;
+}
+.copy-right-sec a{
+	color: #fcd462;
+    font-weight: 500;
+}
+a{
+  text-decoration:none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header .logo img {
+        max-height: 7rem;
+    }
+
+    header .icon #menu {
+        display: inline-block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: 1rem solid rgba(205, 170, 124, 0.2);
+        border-bottom: 1rem solid rgba(205, 170, 124, 0.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: var(--black);
+    }
+
+    .menu-tiles {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .section {
+        padding: 50px 4%; 
+    }
+
+    .section h2 {
+        font-size: 2.5em;
+    }
+
+    .section p {
+        font-size: 1em;
+        margin-bottom: 20px; 
+    }
+}

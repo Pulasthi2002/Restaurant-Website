@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration</title>
+    
+
+    <style>
+        body {
+    background: url(image/image_6.jpg);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    background: linear-gradient(0deg, rgba(125,81,121,1) 0%, rgba(46,52,187,1) 100%);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #000000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#registrationResult {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Admin Registration</h2>
+
+        <form id="adminRegistrationForm" method="post">
+            <input type="text" id="fullname" name="fullname" placeholder="Name" required>
+
+            <input type="email" id="email" name="email" placeholder="Email" required>
+
+            <input type="tel" id="contactNo" name="contactNo" placeholder="Contact" required>
+
+            <input type="text" id="username" name="username" placeholder="Username" required>
+
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+
+            <button type="button" onclick="registerAdmin()">Register</button>
+        </form>
+
+        <div id="registrationResult"></div>
+    </div>
+
+    <script>
+    function registerAdmin() {
+            const form = document.getElementById('adminRegistrationForm');
+            const formData = new FormData(form);
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirmPassword');
+
+            if (password !== confirmPassword) {
+                document.getElementById('registrationResult').innerHTML = 'Passwords do not match.';
+                return;
+            }
+
+            fetch('adminreg.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('registrationResult').innerHTML = data.message;
+                alert(data.message); 
+
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

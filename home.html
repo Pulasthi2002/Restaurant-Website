@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outer Clove Restaurant</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="home.css">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollLinks = document.querySelectorAll('.scroll-link');
+
+        scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+</script>
+  
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"><img src="image/image_9.png"></a>
+    <nav class="navbar">
+      <a href="home.html" class="active">HOME</a>
+      <a class="scroll-link" href="#restaurant-details">ABOUT</a>
+      <a class="scroll-link" href="#services">SERVICES</a>
+      <a class="scroll-link" href="#restaurant-details">CONTACT</a>
+      
+    </nav>
+    <div class="icon">
+      <a href="login.html">
+      <i class="fa fa-user"></i>
+    </a>
+    <i class="fas fa-bars" id="menu"></i>
+    </div>
+  </header>
+  
+  <div class="home" id="home">
+    <div class="swiper home-slider">
+      <div class="swiper-wrapper wrapper">
+        <div class="swiper-slide slide slide1">
+          <div class="content">
+            <h1> Outer Clove Restaurant </h1>
+            <h3> Welcome Our Restaurant </h3>
+            <p> Step into the extraordinary realm of Outer Clove, where culinary mastery converges with celestial ambience. Your gastronomic voyage begins with a reservation, unlocking a portal to unparalleled flavors and impeccable service. Seize the opportunity to curate an unforgettable dining experience – reserve your place at Outer Clove, where each moment is a masterpiece of taste and refinement. </p>
+          <a href="login.html" class="btn">Reservation</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide slide slide2">
+          <div class="content">
+            <h1> Outer Clove Restaurant </h1>
+            <h3> our delicious foods </h3>
+            <p> Step into Outer Clove, where culinary artistry graces every plate. Our menu is a symphony of carefully crafted flavors, from vibrant appetizers to sumptuous mains and decadent desserts. Each dish reflects our commitment to excellence, offering a dining experience where innovation and tradition converge. Discover the extraordinary at Outer Clove, where every bite narrates a story of passion and flavor. </p>
+          <a href="login.html" class="btn">View Menu</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      </div>
+  </div>
+
+  <section class="services" id="services">
+    <h1 class="heading">Our Services</h1>
+
+    <div class="services-container">
+        <div class="service-item">
+            <img src="image/f1.jpg" alt="Service 1">
+            <div class="service-item-content">
+                <h3>Online Ordering</h3>
+                <p>Conveniently order your favorite dishes online and enjoy contactless delivery.</p>
+            </div>
+        </div>
+        
+        <div class="service-item">
+            <img src="image/f2.jpg" alt="Service 2">
+            <div class="service-item-content">
+                <h3>Catering</h3>
+                <p>Host memorable events with our catering services, offering a diverse menu for all occasions.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <img src="image/f3.jpg" alt="Service 3">
+            <div class="service-item-content">
+                <h3>Outdoor Seating</h3>
+                <p>Enjoy your meal in a relaxed outdoor setting with our comfortable and spacious seating arrangements.</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <img src="image/f4.jpg" alt="Service 4">
+            <div class="service-item-content">
+                <h3>Private Events</h3>
+                <p>Book our venue for private events and celebrations, with customizable menus and attentive service.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="restaurant-details" id="restaurant-details">
+  <div class="details-container">
+      <div class="details-info">
+          <h2 class="heading">Our Restaurant</h2>
+          <p>Welcome to OuterClover,We're not just a restaurant; we're a flavor adventure crafted with love. Our chefs blend tradition and innovation, using the finest local and global ingredients. Each visit is a moment to savor, with attentive service and a commitment to sustainability. Join us for a uniquely delightful experience where every bite tells a story.</p>
+      </div>
+      <div class="details-image">
+          <img src="image/H1.jpg" alt="Restaurant Interior">
+      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-icons">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com/YourFacebookPage" target="_blank" class="icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/YourLinkedInProfile" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/YourInstagramProfile" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/i/flow/login" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" class="icon"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <div class="content-wrapper">
+      <div class="address">
+          <h2>Contact</h2>
+          <div class="address-links">
+              <ul>
+                  <li class="address1"><i class="fa-solid fa-location-dot"></i> Kandy Rd,
+                      Colombo, Sri Lanka.</li>
+                  <li><a href="tel:+94 112543798"><i class="fa-solid fa-phone"></i>+94 112543798</a></li>
+                  <li><a href="mailto:info@theouterclove.com"><i class="fa-solid fa-envelope"></i>info@theouterclove.com</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+<section id="copy-right">
+  <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+    2024 Outer Clove. All Rights Reserved.
+  </div>
+</section>
+  
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ <script>
+   var swiper = new Swiper(".home-slider", {
+     spaceBetween: 30,
+     centeredSlides: true,
+     autoplay: {
+       delay: 7500,
+       disableOnInteraction: false,
+     },
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+     loop: true,
+   });
+ </script>  
+
+<script type="text/javascript">
+    let menu = document.querySelector('#menu');
+    let navbar = document.querySelector('.navbar');
+
+    menu.onclick = () =>{
+      menu.classList.toggle('fa-times');
+      navbar.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

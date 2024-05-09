@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: .2s linear;
+    outline: none; border: none;
+    text-transform: capitalize;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(image/image_6.jpg) no-repeat; margin-top: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+html{
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+
+}
+
+.wrapper {
+    
+    position: relative;
+    width: 400px;
+    height: 440px;
+    bottom: 50px;
+    background: linear-gradient(0deg, rgba(125,81,121,1) 0%, rgba(46,52,187,1) 100%);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+
+}
+
+
+.form-box h2{
+    font-size: 2em;
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+
+.input-box input {
+    width: 100%; 
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 100;
+    padding: 0 35px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 1em;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+
+}
+
+.btnlogin{
+    width: 100%;
+    height: 45px;
+    background: #387223;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+
+}
